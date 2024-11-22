@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<img src="images/banner.jpg" height="125" width="850"alt="Welsh Castles Banner image" >
+
+<p>
+<a href="index.htm">Homepage</a>:
+<a href="beaumaris.htm">Beaumaris Castle</a> :
+<a href="caernarfon.htm">Caernarfon Castle</a> :
+<a href="conway.htm">Conwy Castle</a> :
+<a href="dinasbran.htm">Castell Dinas Bran</a> :
+<a href="harlech.htm">Harlech Castle</a>:
+<a href="contact.htm">Contact Us</a>
+</p>
+
+<title>Welsh Castles</title>
+<style>
+
+a:link {color: #003300;}
+a:visited {color: #02361C;}
+a:hover {color: #026633;}
+
+body {font-family: Arial, Helvetica, sans-serif;
+background-color: #fbfbfb;
+	width: 850px;
+	margin-right: auto;
+	margin-left: auto;}
+h1   {color: #44763E;font-family:Goudy Old style}
+h3   {color: #02361C;font-family:Arial}
+p    {color: #161716;font-family:Arial}
+</style>
+</head>
+<body>
+
+
+
+
+
+<h1>The Historic Castles of Wales</h1>
+
+<img src="images/map.gif" height="458" width="364" alt="Map gif" style="float:right";>
+
+<p>Wales is said to be "the castle capital of the world". It has about 400 castles, of which over 100 are still standing, either as ruins or as restored buildings. The rest have returned to nature, and today consist of ditches, mounds and earthworks, often in commanding positions.</p>
+
+
+<h3>Historic Castles of Wales by County</h2>
+
+<p>Isle of Anglesey</p>
+<ul>
+<li>Castell Aberlleiniog</li>
+<li>Beaumaris Castle 13th century</li>
+</ul>
+
+<p>Brecknockshire</p>
+<ul>
+<li>Blaenllyfni castle 13th century</li>
+<li>Brecon Castle 11th century</li>
+<li>Bronllys Castle</li>
+</ul>
+
+<p>Carmarthenshire</p>
+<ul>
+<li>Carreg Cennen Castle</li>
+<li>Carmarthen Castle 11th century</li>
+<li>Dinefwr Castle 11th century</li>
+</ul>
+
+<p>Cardiganshire</p>
+<ul>
+<li>Aberdyfi Castle 12th century</li>
+<li>Aberystwyth 13th century</li>
+<li>Cardigan Castle 13th century</li>
+</ul>
+
+<p>Caernarfonshire</p>
+<ul>
+<li>Bryn Bras Castle Victorian</li>
+<li>Caernarfon Castle 13th century</li>
+<li>Criccieth Castle 13th century</li>
+</ul>
+
+<p>Denbighshire</p>
+<ul>
+<li>Bodelwyddan Castle</li>
+<li>Denbigh Castle</li>
+<li>Dinas Bran 12th century</li>
+</ul>
+
+<p>Flintshire</p>
+<ul>
+<li>Caergwrle Castle</li>
+<li>Ewloe Castle</li>
+<li>Flint Castle</li>
+</ul>
+
+<p>Glamorganshire</p>
+<ul>
+<li>Caerphilly Castle 13th & 14th century</li>
+<li>Candleston Castle 14th century</li>
+<li>Cardiff Castle 11th century</li>
+</ul>
+
+<p>Merionethshire</p>
+<ul>
+<li>Castell y Bere 13th century</li>
+<li>Harlech Castle 13th century</li>
+</ul>
+
+<p>Monmouthshire</p>
+<ul>
+<li>Abergavenny Castle 11th to 13th century</li>
+<li>Betws newydd Castle 11th century</li>
+<li>Caerleon Castle 11th to 13th century</li>
+</ul>
+
+<p>Montgomeryshire</p>
+<ul>
+<li>Cefn Carnedd iron age hill fort</li>
+<li>Dolforwyn Castle 13th century</li>
+<li>Fridd Faldwyn hill fort</li>
+</ul>
+
+<p>Pembrokeshire</p>
+<ul>
+<li>Carew Castle 11th to 16th century</li>
+<li>Llawhaden Castle 12th to 14th century</li>
+<li>Manorbier Castle 12th to 14th century</li>
+</ul>
+
+	<table border="0" cellpadding="0">
+  <tr>
+    <td width="100%"><img src="images/6.jpg" width="300" height="240" name="photoslider"></td>
+  </tr>
+  <tr>
+    <td width="100%"><form method="POST" name="rotater">
+      <div align="center"><center><p><script language="JavaScript1.1">
+var photos=new Array()
+var which=1
+
+/*Change the below variables to reference your own images. You may have as many images in the slider as you wish*/
+photos[0]="images/6.jpg" 
+photos[1]="images/7.jpg"
+photos[2]="images/8.jpg"
+photos[3]="images/9.jpg"
+photos[4]="images/10.jpg"
+
+
+function backward(){
+if (which>0){
+window.status=''
+which--
+document.images.photoslider.src=photos[which]
+}
+}
+
+function forward(){
+if (which<photos.length-1){
+which++
+document.images.photoslider.src=photos[which]
+}
+else window.status='End of gallery'
+}
+</script><input type="button" value="&lt;&lt;Back" name="B2"
+      onClick="backward()"> <input type="button" value="Next&gt;&gt;" name="B1"
+      onClick="forward()"><br>
+      <a href="#" onClick="which=1;backward();return false"><small>Start Over</small></a></p>
+      </center></div>
+    </form>
+    </td>
+  </tr>
+</table>
+
+<p align="center"><font face="arial" size="-2">This free script provided by</font><br>
+<font face="arial, helvetica" size="-2"><a href="http://javascriptkit.com">JavaScript
+Kit</a></font></p>
+	
+<a href="#" 
+       class="scrollbutton" 
+       id="scrollbuttonid">
+        Scroll to Top
+    </a>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
