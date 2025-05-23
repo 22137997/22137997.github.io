@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Unit 13</title>
+  <style>
+    @font-face {
+      font-family: 'Hallandale Square JL';
+      src: url('HallandaleSquareJL.ttf') format('truetype');
+    }
+
+    body {
+      font-family: 'Hallandale Square JL', Arial, sans-serif;
+      background-image: url('assets/background5.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    .banner {
+      background-color: #ffffff;
+      width: 100vw;
+      margin-left: calc(-1 * (100vw - 100%) / 2);
+      margin-right: calc(-1 * (100vw - 100%) / 2);
+      margin-bottom: 50px;
+    }
+
+    .banner img {
+      width: 100%;
+      display: block;
+    }
+
+    .pentagon-wrapper {
+      position: relative;
+      width: 450px;
+      height: 450px;
+      margin: auto;
+    }
+
+    svg.pentagon {
+      width: 100%;
+      height: 100%;
+    }
+
+    .unit-link {
+      position: absolute;
+      background-color: #ffffff;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 18px;
+      text-decoration: none;
+      color: black;
+      white-space: nowrap;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      border: 1px solid #ccc;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .unit1  { top: 10px; left: 40px; }
+    .unit2  { top: 10px; right: 40px; }
+    .unit8  { top: 230px; right: -75px; }
+    .unit13 { bottom: -53px; left: 50%; transform: translateX(-50%); }
+    .unit19 { top: 230px; left: -83px; }
+
+    .unit1:hover  { background-color: red; color: white; }
+    .unit2:hover  { background-color: green; color: white; }
+    .unit8:hover  { background-color: orange; color: white; }
+    .unit13:hover { background-color: purple; color: white; }
+    .unit19:hover { background-color: gray; color: white; }
+
+    .index-link {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 12px 18px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      font-size: 18px;
+      text-decoration: none;
+      color: black;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      border: 1px solid #ccc;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .index-link:hover {
+      background-color: blue;
+      color: white;
+    }
+
+    .about-title {
+      font-size: 28px;
+      margin-top: 68px;
+      font-weight: bold;
+    }
+
+    .about-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 40px auto 0 auto;
+      width: 1000px;
+      max-width: 95vw;
+    }
+
+    .side-boxes {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 364px;
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+
+    .side-boxes.left-side {
+      margin-left: 40px;
+      margin-right: 0;
+    }
+
+    .side-boxes.right-side {
+      margin-right: 40px;
+      margin-left: 0;
+    }
+
+    .side-box-half {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 25px;
+      font-size: 18px;
+      text-align: left;
+      height: 260px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .side-box-half img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .center-box {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: left;
+      font-size: 20px;
+      position: relative;
+      width: 600px;
+      min-height: 500px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    .bottom-box {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: left;
+      font-size: 20px;
+      position: relative;
+      width: 700px;
+      max-width: 95vw;
+      min-height: 250px;
+      margin: 30px auto 0 auto;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .center-box strong,
+    .side-box-half strong,
+    .bottom-box strong {
+      margin-bottom: 20px;
+      flex-shrink: 0;
+    }
+
+    .more-button-container {
+      margin: 60px 0 40px 0;
+      text-align: center;
+    }
+
+    .more-button {
+      display: inline-block;
+      background-color: #ffffff;
+      color: #000;
+      padding: 16px 30px;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .more-button:hover {
+      background-color: #ffccdd;
+      color: #000;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="banner fade-in">
+    <img src="assets/banner5.png" alt="Banner" />
+  </div>
+
+  <div class="pentagon-wrapper fade-in">
+    <svg class="pentagon" viewBox="0 0 100 100">
+      <polygon points="50,0 100,38 82,100 18,100 0,38" fill="#ffffff" stroke="#000" stroke-width="1" />
+    </svg>
+
+    <a href="unit1.htm" class="unit-link unit1">Unit 1</a>
+    <a href="unit2.htm" class="unit-link unit2">Unit 2</a>
+    <a href="unit8.htm" class="unit-link unit8">Unit 8</a>
+    <a href="unit13.htm" class="unit-link unit13">Unit 13</a>
+    <a href="unit19.htm" class="unit-link unit19">Unit 19</a>
+    <a href="index.htm" class="index-link">Homepage</a>
+  </div>
+
+  <div class="about-title fade-in">Unit 13</div>
+
+  <div class="about-container fade-in">
+    <div class="side-boxes left-side">
+      <div class="side-box-half">
+        <strong>Screenshot:</strong><br />
+        <img src="assets/workUnit13.png" alt="Work Unit 13" />
+      </div>
+      <div class="side-box-half">
+        <strong>Screenshot:</strong><br />
+        <img src="assets/3workUnit13.png" alt="Work Unit 13 Part 3" />
+      </div>
+    </div>
+
+    <div class="center-box">
+      <strong>Introduction:</strong><br />
+      Unit 13 is website development, where we anaylse, design and create our own website. In assignment one, we were tasked to assess the uses and features of websites, we were chosen between four, Switch, Gocompare, Mobiles and Mobliesphonedirect. I chose Gocompare and Mobilephonesdirect, identifing their website components, such as; templates, online forums, hot spots, action buttons etc. then near the end of the assignment we had to identify their improvised features, like presentation, usabiliity, accessibility and performance. Then to compleet teh assigmnet, we listed the strengths and weaknessess of both websites.<br /><br />In assignment two, we were tasked to design a website dedicated to advertising a varienty of mobile phones. I first started out designing prototypes, as well what I was going to include. I then created a structure chart, showing the positions of the pages and whom they are connected to, which was followed up by my first design for the hompage. Each page consisted of a list of assets that were going to be included, like images, videos, links and tables. Once all my pages were blueprinted, I filled in the assets log, which would show what the images of the website would look like as well as their name and role on the pages, after that I filled in the test log, listing down what I was going to test when the website was completed.<br /><br />In assigment three came to developing the website, creating this wasn't as hard as thought, most of the code was pretty simple to understand and apply too. I created each page via HTML code, including the images, videos, table, links etc. With the assets folder containg most of the vital components. Then came testing the website, a few things wouldn't load in correctly, such as the video or certain moving images, but eventually I managed to fix the bugs in the code and made them fully working.<br /><br />To finish off woth assignment four, I obtained feedback from others to see how well my website performed and if it met the criteria, all of the feedback was very positive, with me only needing to make small changes here and there. Then when the website was fully complete, I uploaded it to Github, finishing off Unit 13.<br />
+    </div>
+
+    <div class="side-boxes right-side">
+      <div class="side-box-half">
+        <strong>Screenshot:</strong><br />
+        <img src="assets/2workUnit13.png" alt="Work Unit 13 Part 2" />
+      </div>
+      <div class="side-box-half">
+        <strong>Screenshot:</strong><br />
+        <img src="assets/4workUnit13.png" alt="Work Unit 13 Part 4" />
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-box fade-in">
+    <iframe width="1371" height="737" src="https://www.youtube.com/embed/Z8ZIkaWs5No" title="videoproof13" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+
+  <div class="more-button-container fade-in">
+    <a href="unit13ev.htm" class="more-button">See more unit work here!</a>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>

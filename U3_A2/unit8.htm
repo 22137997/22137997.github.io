@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Unit 8</title>
+  <style>
+    @font-face {
+      font-family: 'Hallandale Square JL';
+      src: url('HallandaleSquareJL.ttf') format('truetype');
+    }
+
+    body {
+      font-family: 'Hallandale Square JL', Arial, sans-serif;
+      background-image: url('assets/background4.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    .banner {
+      background-color: #ffffff;
+      width: 100vw;
+      margin-left: calc(-1 * (100vw - 100%) / 2);
+      margin-right: calc(-1 * (100vw - 100%) / 2);
+      margin-bottom: 50px;
+    }
+
+    .banner img {
+      width: 100%;
+      display: block;
+    }
+
+    .pentagon-wrapper {
+      position: relative;
+      width: 450px;
+      height: 450px;
+      margin: auto;
+    }
+
+    svg.pentagon {
+      width: 100%;
+      height: 100%;
+    }
+
+    .unit-link {
+      position: absolute;
+      background-color: #ffffff;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 18px;
+      text-decoration: none;
+      color: black;
+      white-space: nowrap;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      border: 1px solid #ccc;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .unit1  { top: 10px; left: 40px; }
+    .unit2  { top: 10px; right: 40px; }
+    .unit8  { top: 230px; right: -75px; }
+    .unit13 { bottom: -53px; left: 50%; transform: translateX(-50%); }
+    .unit19 { top: 230px; left: -83px; }
+
+    .unit1:hover  { background-color: red; color: white; }
+    .unit2:hover  { background-color: green; color: white; }
+    .unit8:hover  { background-color: orange; color: white; }
+    .unit13:hover { background-color: purple; color: white; }
+    .unit19:hover { background-color: gray; color: white; }
+
+    .index-link {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 12px 18px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      font-size: 18px;
+      text-decoration: none;
+      color: black;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      border: 1px solid #ccc;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .index-link:hover {
+      background-color: blue;
+      color: white;
+    }
+
+    .about-title {
+      font-size: 28px;
+      margin-top: 68px;
+      font-weight: bold;
+    }
+
+    .about-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 40px auto 0 auto;
+      width: 1000px;
+      max-width: 95vw;
+    }
+
+    .side-boxes {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 280px;
+    }
+
+    .side-box-top {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 25px;
+      font-size: 18px;
+      text-align: left;
+      min-height: 400px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    .side-box-bottom {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 25px;
+      font-size: 18px;
+      text-align: left;
+      min-height: 200px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    .center-box {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: left;
+      font-size: 20px;
+      position: relative;
+      width: 600px;
+      min-height: 500px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    .center-box strong,
+    .side-box-top strong,
+    .side-box-bottom strong {
+      margin-bottom: 20px;
+      flex-shrink: 0;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Bottom button styling */
+    .bottom-button {
+      display: inline-block;
+      background-color: #ffffff;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      color: black;
+      border: 2px solid #ccc;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .bottom-button:hover {
+      background-color: #ffff00; /* bright yellow on hover */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="banner fade-in">
+    <img src="assets/banner4.png" alt="Banner" />
+  </div>
+
+  <div class="pentagon-wrapper fade-in">
+    <svg class="pentagon" viewBox="0 0 100 100">
+      <polygon points="50,0 100,38 82,100 18,100 0,38" fill="#ffffff" stroke="#000" stroke-width="1" />
+    </svg>
+
+    <a href="unit1.htm" class="unit-link unit1">Unit 1</a>
+    <a href="unit2.htm" class="unit-link unit2">Unit 2</a>
+    <a href="unit8.htm" class="unit-link unit8">Unit 8</a>
+    <a href="unit13.htm" class="unit-link unit13">Unit 13</a>
+    <a href="unit19.htm" class="unit-link unit19">Unit 19</a>
+    <a href="index.htm" class="index-link">Homepage</a>
+  </div>
+
+  <div class="about-title fade-in">Unit 8</div>
+
+  <div class="about-container fade-in">
+    <div class="side-boxes left-side">
+      <div class="side-box-top">
+        <strong>Screenshot:</strong><br />
+        <img src="assets/workUnit8.png" alt="Work Unit 8" style="width: 100%; border-radius: 8px; margin-top: 10px;" />
+      </div>
+      <div class="side-box-bottom">
+        <strong>Info:</strong><br />
+        This is the image of my structure diagram for my app, showing all the pages and how you can travel through them.
+      </div>
+    </div>
+
+    <div class="center-box">
+      <strong>Introduction:</strong><br />
+      Unit 8 is the unit all about designing and creating a mobile app, primarly us making an app targeted towards young children. We first started off analysing two apps with very different functions and purposes. The first one was Whattsapp, where we identified the purpose of the app, user requirments, user friendliness, dependence on particular hardware, interface elements, integration with standard operating software, platforms and compatibiliy, as well its strength and weaknessess. We then did the exact same for the second app, which I have chosen: Now TV.<br />
+<br>
+ <br />In the second assignment, we started planning and designing our app. We were tasked to create an alphabet learning app, from letters A to F, mainly targeted towards children, we were tasked to design the indiviual pages, each exapling what they do, there names and rejected ideas. We then designed outr own letters and sounds, I created my letters in paint 3D, as well as my own voice lines via an IA speaker website. To finish off, we had to fill in a tes plan, explaining what component will be assest when the app is completed, checking for any faults.<br />
+<br>
+<br />In the last assignment, we were tasked to create our app in MITApp Inventor. I followed my planned designs out near perfectly, including the sounds, images and components needed. We also had to show proof of our work as well as the block components that were used to structure the app within the website. After my app was compleetd, I obtained feedback from it and used it to develop my skills in the future.<br />
+    </div>
+
+    <div class="side-boxes right-side">
+      <div class="side-box-top">
+        <strong>Screenshot:</strong><br />
+        <img src="assets/2workUnit8.png" alt="2nd Work Unit 8" style="width: 100%; border-radius: 8px; margin-top: 10px;" />
+      </div>
+      <div class="side-box-bottom">
+        <strong>Info:</strong><br />
+        This is the image of the first page for my app, its the comparison between the inital design and the final product, as well as the block code that structured it.
+      </div>
+    </div>
+  </div>
+
+  <div class="fade-in" style="margin-top: 60px;">
+    <div style="max-width: 720px; margin: 0 auto; padding: 20px;">
+      <iframe width="482" height="857" src="https://www.youtube.com/embed/Byl0_uRxd10" title="videoproof8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <div style="margin-top: 20px;">
+      <a href="unit8ev.htm" class="bottom-button">
+        See more unit work here!
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
+
